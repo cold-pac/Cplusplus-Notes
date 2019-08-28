@@ -129,14 +129,14 @@
             let codeSnippets = document.getElementsByTagName("pre"), codeVisible = true;
             function hideCode () {
                 if (codeVisible) {
-                    for (var z = 0; z < codeSnippets.length; z++) {
-                        codeSnippets[z].style.display = "none";
-                    }
+                    Array.from(codeSnippets).forEach((elem) => {
+                        elem.style.display = "none";
+                    });
                     codeVisible = false;
                 } else {
-                    for (var y = 0; y < codeSnippets.length; y++) {
-                        codeSnippets[y].style.display = "block";
-                    }
+                    Array.from(codeSnippets).forEach((elem) => {
+                        elem.style.display = "block";
+                    });
                     codeVisible = true;
                 }
             }
