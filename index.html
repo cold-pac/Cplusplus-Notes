@@ -13,12 +13,17 @@
             display: none;
         }
         header {
+            cursor: pointer;
         }
         #pageTitle {
             font-size: 2em;
         }
         #options {
             display: none;
+            list-style: georgian;
+        }
+        #highlightMode {
+            cursor: pointer;
         }
         #container {
             height: 100%;
@@ -40,17 +45,49 @@
     </style>
     <script>
         window.onload = function  () {
+
+            //just makes options appear and disappear when you press the header
+            let options = document.getElementById("options"), optionsVisible = false;
+            function showOptions () {
+                if (optionsVisible) {
+                    options.style.display = "none";
+                    optionsVisible = false;
+                } else {
+                    options.style.display = "block";
+                    optionsVisible = true;
+                }
+            }
+            document.getElementById("pageTitle").onclick = showOptions;
+
+
+            //this bit is for highlightMode (and why I need window.onload)
             let subBoxes = document.getElementsByClassName("be");
 
-            console.log(subBoxes.length);
+            function changeBackgroundYellow () {
+                this.style.backgroundColor = "yellow";
+            }
 
-            for (var i = 0; i < subBoxes.length; i++) {
-                subBoxes[i].onmouseover = function () {
-                    this.style.backgroundColor = "yellow";
-                };
-                subBoxes[i].onmouseout = function () {
-                    this.style.backgroundColor = "white";
-                };
+            function changeBackgroundWhite () {
+                this.style.backgroundColor = "white";
+            }
+
+
+            var highlightModeOn = false;
+            function turnOnHighlightMode() {
+                if (highlightModeOn) {
+                    for (var x = 0; x < subBoxes.length; x++) {
+                        console.log("working");
+                        subBoxes[x].removeEventListener("mouseover", changeBackgroundYellow);
+                        subBoxes[x].removeEventListener("mouseout", changeBackgroundWhite);
+                    }
+                    highlightModeOn = false;
+                } else {
+                    for (var y = 0; y < subBoxes.length; y++) {
+                        subBoxes[y].addEventListener("mouseover", changeBackgroundYellow);
+                        subBoxes[y].addEventListener("mouseout", changeBackgroundWhite);
+                    }
+                    highlightModeOn = true;
+                }
             }
 
             /*
@@ -63,6 +100,9 @@
                     this.style.backgroundColor = "white";
                 };
             }); */
+
+            document.getElementById("highlightMode").onclick = turnOnHighlightMode;
+
         }
 
     </script>
@@ -70,7 +110,10 @@
 <body>
 <header>
     <div id = "pageTitle">C++</div>
-    <div id = "options">asdfasdf</div>
+    <ul id = "options">
+        <li id = "highlightMode">Highlight Mode</li>
+    </ul>
+
 </header>
 <div id = "container">
     <div class = "be">A pointer = a variable that holds a memory address</div>
