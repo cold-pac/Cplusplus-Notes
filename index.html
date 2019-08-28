@@ -113,6 +113,25 @@
 
             document.getElementById("highlightMode").onclick = turnOnHighlightMode;
 
+            //to hide all the code snippets
+            let codeSnippets = document.getElementsByTagName("code"), codeVisible = true;
+            function hideCode () {
+                if (codeVisible) {
+                    for (var z = 0; z < codeSnippets.length; z++) {
+                        codeSnippets[z].style.display = "none";
+                    }
+                    codeVisible = false;
+                } else {
+                    for (var y = 0; y < codeSnippets.length; y++) {
+                        codeSnippets[y].style.display = "block";
+                    }
+                    codeVisible = true;
+                }
+            }
+            document.getElementById("hideCodeMode").onclick = hideCode;
+
+            console.log(document.getElementsByTagName("code"));
+
         }
 
     </script>
@@ -122,6 +141,7 @@
     <div id = "pageTitle">C++</div>
     <ul id = "options">
         <li id = "highlightMode">Highlight Mode</li>
+        <li id = "hideCodeMode">Hide Code</li>
     </ul>
 
 </header>
@@ -155,6 +175,14 @@
             <li><b>string</b></li>
             <li><b>bool</b></li>
         </ul>
+        <pre>
+            <code>
+                int age = 21;
+                bool amMale = true;
+                string myString;
+                myString = "Hello World!" //splitting declaration and initialisation
+            </code>
+        </pre>
     </div>
 </div>
 </body>
