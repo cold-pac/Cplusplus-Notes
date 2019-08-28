@@ -126,7 +126,7 @@
             document.getElementById("highlightMode").onclick = turnOnHighlightMode;
 
             //to hide all the code snippets
-            let codeSnippets = document.getElementsByTagName("code"), codeVisible = true;
+            let codeSnippets = document.getElementsByTagName("pre"), codeVisible = true;
             function hideCode () {
                 if (codeVisible) {
                     for (var z = 0; z < codeSnippets.length; z++) {
