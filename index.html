@@ -33,6 +33,7 @@
         }
         .be {
             line-height: 1.9em;
+            font-size: 1em;
         }
         #pageTitle {
             font-size: 2em;
@@ -143,6 +144,50 @@
             document.getElementById("hideCodeMode").onclick = hideCode;
             console.log(document.getElementsByTagName("code"));
 
+
+            //sets .be class divs to smaller width
+            let start = 80;
+            function makeBeSmaller () {
+                start -= 10;
+                console.log(start + "vw");
+                Array.from(subBoxes).forEach(function(elem) {
+                    elem.style.width = start + "vw";
+                });
+            }
+
+
+            function makeBeLarger () {
+                start += 10;
+                console.log(start + "vw");
+                Array.from(subBoxes).forEach(function(elem) {
+                    elem.style.width = start + "vw";
+                });
+            }
+
+            document.getElementById("makeSmaller").onclick = makeBeSmaller;
+            document.getElementById("makeLarger").onclick = makeBeLarger;
+
+            let startFont = 1;
+            function makeFontSmaller () {
+                startFont -= 0.1;
+                console.log(startFont + "em");
+                Array.from(subBoxes).forEach(function(elem) {
+                    elem.style.fontSize = startFont + "em";
+                });
+            }
+
+
+            function makeFontLarger () {
+                startFont += 0.1;
+                console.log(startFont + "em");
+                Array.from(subBoxes).forEach(function(elem) {
+                    elem.style.fontSize = startFont + "em";
+                });
+            }
+
+            document.getElementById("makeFontSmaller").onclick = makeFontSmaller;
+            document.getElementById("makeFontLarger").onclick = makeFontLarger;
+
         }
 
     </script>
@@ -153,6 +198,10 @@
     <ul id = "options">
         <li id = "highlightMode">Highlight Mode</li>
         <li id = "hideCodeMode">Hide Code</li>
+        <li id = "makeSmaller">Zoom Out</li>
+        <li id = "makeLarger">Zoom In</li>
+        <li id = "makeFontSmaller">Make font smaller</li>
+        <li id = "makeFontLarger">Make font larger</li>
     </ul>
 
 </header>
