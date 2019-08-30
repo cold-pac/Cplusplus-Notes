@@ -394,18 +394,20 @@
         However, you can declare your function above the main method, and define the function below main. better readability.
         <pre>
             <code>
-                    void myFunction();
+                    void myFunction(string myName);
 
                     int main() {
-                          myFunction();
+                          myFunction("John");
                           return 0;
                     }
 
-                    void myFunction() {
-                        cout << "I just got executed!";
+                    void myFunction(string myName) {
+                        cout << myName + " hello!";
                     }
             </code>
         </pre>
+        Remember, parameters/arguments must be typed! <br/>
+        NB: Parameters = act as variables inside a function. <i>When a parameter is passed to a function</i> it is called an argument. i.e. string myName is a parameter, "John" is an argument.
     </div>
 </div>
 </body>
