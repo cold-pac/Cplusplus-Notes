@@ -209,7 +209,7 @@
     <div class = "be">cygwin = unix-like environment that runs on Windows -> Install cygwin + cygwin packages: CMake (to build), GCC (C++ compiler) (Has to actually be installed as a package of cygwin, not just downloaded from the CMake website)</div>
     <div class = "be"><b>#include &lt;iostream&gt;</b> = header file library that allows us to work with input and output objects</div>
     <div class = "be"><b>using namespace std</b> = 'standard namespace library'. Lets you use objects and variables from the standard library. (Alternatively you can omit this and use <b>std::</b> for <b>string</b> and <b>cout</b> objects)</div>
-    <div class = "be">Must have a main function e.g. <b>int main() {return 0;}</b> => always executed? -> <b>int</b> means that the function returns an integer, e.g. <b>return 0</b></div>
+    <div class = "be">Must have a main function e.g. <b>int main() {return 0;}</b> main must return an integer! <b>int</b> means that the function returns an integer, e.g. <b>return 0</b></div>
     <div class = "be">End statements with <b>;</b></div>
     <div class = "be">To log text in the console use the <b>cout</b> ("see-out") and the <b>&lt;&lt;</b> operator. New lines = <b>\n</b>. To combine text and variables separate them with <b>&lt;&lt;</b> e.g. <b>cout << "Hello" << myName << ". You are" << myAge << " years old"</b></div>
     <div class = "be">
@@ -273,9 +273,99 @@
     <div class = "be">
         Arithmetic, assigment, comparison and logical operators are the same as in JavaScript. Remember, <b>%</b> = <i>modulus</i> and gives the <i>division remainder</i>
     </div>
-    <div>
+    <div class = "be">
         Strings in C++ are objects. <b>str.length()</b> for length, <b>str[1]</b>, <b>str[0] = 'a'</b>
     </div>
+    <div class = "be"><b>max(x,y)</b> returns the highest value out of x and y. <b>min(x,y)</b></div>
+    <div class = "be"><b>cmath header file/library</b> (#include &lt;cmath&gt;) contains <b>sqrt(64)</b>, <b>round(2.3)</b>, <b>abs(x)</b>, <b>cos(x)</b>... functions</div>
+    <div class = "be">
+        if - else statements:
+        <pre>
+            <code>
+                int age = 33;
+                if (age <= 18) {
+                    cout << "begone";
+                else if (age > 60) {
+                    cout << "good day";
+                else {
+                    what's up
+                }
+            </code>
+        </pre>
+        Single line if-else statement: <b>condition? statement-if-true : statement-if-false</b> <br/>
+        Switch statements:
+        <pre>
+            <code>
+                switch(expression) {
+                      case x:
+                        // code block
+                        break;
+                      case y:
+                        // code block
+                        break;
+                      default:
+                        // code block
+                }
+            </code>
+        </pre>
+        while:
+        <pre>
+            <code>
+                int count = 1;
+                while (count < 10) {
+                    cout << "Cowabunga" \n;
+                    count++;
+                    if (count < 1) {
+                        break;
+                    }
+                }
+            </code>
+        </pre>
+        do - while:
+        <pre>
+            <code>
+                int count = 1;
+                do {
+                    cout << "yo";
+                    count++;
+                }
+                while (count < 10);
+            </code>
+        </pre>
+        for loop:
+        <pre>
+            <code>
+                for (int i = 0; i < myArr.length(); i++) {
+                    cout << "what's up"\n;
+                    if (i == 5) {
+                        break; //jump out of the loop
+                    }
+                    if (i == 9) {
+                        continue; //skip one iteration of the loop
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class = "be">Arrays: <br/>
+        To declare an array, use <i>variable type</i> <i>name</i> <i>[no. of elements]</i> <br/>
+        Array literal:
+        <pre>
+            <code>
+                string cars[4] = {"Volvo", "Toyota", "Mercedes", "Porsche"}; //MUST USE DOUBLE QUOTES
+                int myNum[3] = {1, 3, 5};
+                cout cars[2]; //prints Mercedes
+            </code>
+        </pre>
+        You can omit the array size in an array literal
+        <pre>
+            <code>
+                string names[] = {"Harry", "Mark", "John"};
+
+            </code>
+        </pre>
+    </div>
+
 </div>
 </body>
 </html>
