@@ -585,6 +585,36 @@
                 }
             </code>
         </pre>
+        Important: Encapsulation: you can declare class members (attributes/properties and methods) as private, but still read or modify them outside the class using getter and setter methods
+        <pre>
+            <code>
+                #include <iostream>
+                using namespace std;
+
+                class Employee {
+                  private:
+                    // Private attribute
+                    int salary;
+
+                  public:
+                    // Setter
+                    void setSalary(int s) {
+                      salary = s;
+                    }
+                    // Getter
+                    int getSalary() {
+                      return salary;
+                    }
+                };
+
+                int main() {
+                  Employee myObj;
+                  myObj.setSalary(50000);
+                  cout << myObj.getSalary();
+                  return 0;
+                }
+            </code>
+        </pre>
     </div>
 </div>
 </body>
