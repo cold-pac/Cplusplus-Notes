@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>C++ Notes</title>
     <link rel = "shortcut icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png">
+
+    <!-- Highlight Js -->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <style>
         html, body {
             height: 100%;
@@ -23,14 +30,17 @@
             padding: 0.2em;
         }
         pre {
+            /*
             //background: hsl(0, 0%, 96%);
-            background-color: #565656;
+            //background-color: #565656;
             border: 1px solid hsl(0, 0%, 87%);
             color: #f9f9f9;
             font-size: 15px;
             line-height: 1.8;
             overflow: auto;
             word-wrap: break-word;
+            */
+            margin: -10px;
         }
         .be {
             line-height: 1.9em;
@@ -217,7 +227,7 @@
     <div class = "be">To log text in the console use the <b>cout</b> ("see-out") and the <b>&lt;&lt;</b> operator. New lines = <b>\n</b>. To combine text and variables separate them with <b>&lt;&lt;</b> e.g. <b>cout << "Hello" << myName << ". You are" << myAge << " years old"</b></div>
     <div class = "be">
         Example:
-        <pre>
+        <pre class = "prettyprint">
             <code>
                 #include &lt;iostream&gt;
                 using namespace std;
@@ -300,13 +310,13 @@
         <pre>
             <code>
                 switch(expression) {
-                      case x:
+                    case x:
                         // code block
                         break;
-                      case y:
+                    case y:
                         // code block
                         break;
-                      default:
+                    default:
                         // code block
                 }
             </code>
@@ -389,7 +399,7 @@
     </div>
     <div class = "be">
         Functions: (block of code that runs when called) <br/>
-        <b>Return values: </b> void = no return value, <b>int</b>, <b>string</b>
+        <b>Return values:</b> void = no return value, <b>int</b>, <b>string</b>
         All user-defined functions must be declared above main!! C++ works from top to bottom. <br/>
         However, you can declare your function above the main method, and define the function below main. better readability.
         <pre>
@@ -426,6 +436,22 @@
                 }
             </code>
         </pre>
+    </div>
+    <div class = "be">
+        <span>Classes: !important</span>
+        <span>C++ is an object oriented programming language - everything in C++ is associated with classes and objects (and their properties/attributes and methods)</span>
+        <span>Attribute/property = variables, method = function that belong to/are inside a class/object</span>
+        <span>A class = an object constructor or a "blueprint" for creating objects. </span>
+        <span>To create a class use the <b>class</b> keyword: </span>
+            <pre>
+                <code>
+                    class myClass {
+                        public:             //Access specifier
+                            int myNum;          //Attribute
+                            string myString;    //Attribute
+                    }
+                </code>
+            </pre>
     </div>
 </div>
 </body>
