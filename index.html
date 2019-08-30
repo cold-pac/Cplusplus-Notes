@@ -449,9 +449,67 @@
                         public:             //Access specifier
                             int myNum;          //Attribute
                             string myString;    //Attribute
-                    }
+                    };                          //class definition ends with a semi-colon!!
                 </code>
             </pre>
+        <b>Access specifier: </b> <b>public</b> = attributes and methods accessible from outside the class <br/>
+        To create an object of your class (i.e. an instance of the class)
+        <pre>
+            <code>
+                class MyClass {       // The class
+                  public:             // Access specifier
+                    int myNum;        // Attribute (int variable)
+                    string myString;  // Attribute (string variable)
+                };
+
+                int main() {
+                  MyClass myObj;
+
+                  // Access attributes and set values
+                  myObj.myNum = 15;
+                  myObj.myString = "Some text";
+
+                  return 0;
+                }
+            </code>
+        </pre>
+        Methods = functions that belong to a class. Can be defined inside or outside the class definition.
+        <pre>
+            <code>
+                class MyClass {        // The class
+                    public:              // Access specifier
+                        void myMethod() {  // Method/function defined inside the class
+                          cout << "Hello World!";
+                        }
+                    };
+
+                    int main() {
+                      MyClass myObj;     // Create an object of MyClass
+                      myObj.myMethod();  // Call the method
+                      return 0;
+                    }
+            </code>
+        </pre>
+        To define the method outside of the class definition:
+        <pre>
+            <code>
+                class MyClass {        // The class
+                  public:              // Access specifier
+                    void myMethod();   // Method/function declaration
+                };
+
+                // Method/function definition outside the class
+                void MyClass::myMethod() {
+                  cout << "Hello World!";
+                }
+
+                int main() {
+                  MyClass myObj;     // Create an object of MyClass
+                  myObj.myMethod();  // Call the method
+                  return 0;
+                }
+            </code>
+        </pre>
     </div>
 </div>
 </body>
