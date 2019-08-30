@@ -23,9 +23,10 @@
             padding: 0.2em;
         }
         pre {
-            background: hsl(0, 0%, 96%);
+            //background: hsl(0, 0%, 96%);
+            background-color: #565656;
             border: 1px solid hsl(0, 0%, 87%);
-            color: #3c3c3c;
+            color: #f9f9f9;
             font-size: 15px;
             line-height: 1.8;
             overflow: auto;
@@ -375,7 +376,14 @@
         use <b>$</b> to get the memory address of each variable (where the variable is stored on the computer)
     </div>
     <div class = "be">
-        pointer = variable that stores a memory address
+        pointer = variable that stores a memory address. <i>type</i> of pointer has to match <i>type</i> of variable.
+        <pre>
+            <!--suppress CheckDtdRefs -->
+            <code>
+                string food = "Pizza";  // A food variable of type string
+                string* ptr = &food;
+            </code>
+        </pre>
     </div>
 
 </div>
