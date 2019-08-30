@@ -392,6 +392,20 @@
         <b>Return values: </b> void = no return value.
         All user-defined functions must be declared above main!! C++ works from top to bottom. <br/>
         However, you can declare your function above the main method, and define the function below main. better readability.
+        <pre>
+            <code>
+                    void myFunction();
+
+                    int main() {
+                          myFunction();
+                          return 0;
+                    }
+
+                    void myFunction() {
+                        cout << "I just got executed!";
+                    }
+            </code>
+        </pre>
     </div>
 </div>
 </body>
